@@ -1,8 +1,8 @@
 #pragma once
 #include <vector>
 
-#include "../External/glm/glm/ext.hpp"
-#include "../External/glm/glm/glm.hpp"
+#include "../thirdparty/glm/glm/ext.hpp"
+#include "../thirdparty/glm/glm/glm.hpp"
 
 using namespace glm;
 using namespace std;

@@ -1,5 +1,5 @@
 #include "OOD.h"
-#include "../External/glm/glm/gtc/matrix_transform.hpp"
+#include "../thirdparty/glm/glm/gtc/matrix_transform.hpp"
 
 namespace OOD {
 
