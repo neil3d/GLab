@@ -9,6 +9,8 @@
 #ifndef FalseSharing_hpp
 #define FalseSharing_hpp
 
-#include <stdio.h>
+void parallelWithFalseSharing();
+
+void eliminateFalseSharing();
 
 #endif /* FalseSharing_hpp */

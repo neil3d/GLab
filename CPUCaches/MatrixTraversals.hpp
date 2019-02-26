@@ -9,6 +9,8 @@
 #ifndef MatrixTraversals_hpp
 #define MatrixTraversals_hpp
 
-#include <stdio.h>
+void sumMatrixRowMajor();
+
+void sumMatrixColumnMajor();
 
 #endif /* MatrixTraversals_hpp */

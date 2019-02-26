@@ -39,8 +39,8 @@ int main() {
       timeDOD = Clock::now() - start;
     }
 
-    float t1 = chrono::duration_cast<chrono::duration<float>>(timeOOD).count();
-    float t2 = chrono::duration_cast<chrono::duration<float>>(timeDOD).count();
+    float t1 = chrono::duration_cast<chrono::duration<float> >(timeOOD).count();
+    float t2 = chrono::duration_cast<chrono::duration<float> >(timeDOD).count();
     float r = t1 / t2;
     sum += r;
 
