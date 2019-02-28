@@ -25,6 +25,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		28209E9B2228306B00D633CA /* CMakeLists.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
 		2899D0EC22282AE6003BD8FF /* ECSProfile */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ECSProfile; sourceTree = BUILT_PRODUCTS_DIR; };
 		2899D0EF22282AE6003BD8FF /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		2899D0F622282B0D003BD8FF /* OOD.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OOD.cpp; sourceTree = "<group>"; };
@@ -49,6 +50,7 @@
 			isa = PBXGroup;
 			children = (
 				28EB815D22282D6C00C06FF4 /* README.md */,
+				28209E9B2228306B00D633CA /* CMakeLists.txt */,
 				28DE9A8322282B7000E3E904 /* src */,
 				2899D0ED22282AE6003BD8FF /* Products */,
 			);
