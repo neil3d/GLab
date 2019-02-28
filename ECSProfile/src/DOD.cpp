@@ -1,4 +1,4 @@
-#include "../thirdparty/glm/glm/gtc/matrix_transform.hpp"
+#include "../../thirdparty/glm/glm/gtc/matrix_transform.hpp"
 #include "DOD.h"
 
 namespace DOD {

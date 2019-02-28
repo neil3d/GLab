@@ -9,7 +9,7 @@ using Clock = chrono::steady_clock;
 
 int main() {
   const int ENTITY_COUNT = 50000;
-  const int TEST_COUNT = 64;
+  const int TEST_COUNT = 16;
 
   float sum = 0;
   Clock::duration timeOOD, timeDOD;

@@ -4,8 +4,8 @@
 #include <memory>
 #include <string>
 
-#include "../thirdparty/glm/glm/ext.hpp"
-#include "../thirdparty/glm/glm/glm.hpp"
+#include "../../thirdparty/glm/glm/ext.hpp"
+#include "../../thirdparty/glm/glm/glm.hpp"
 
 using namespace std;
 using namespace glm;
