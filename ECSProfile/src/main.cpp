@@ -51,4 +51,6 @@ int main() {
   cout << "Average = " << sum / TEST_COUNT << endl 
 	  << "Press Enter...";
 
+  getchar();
+
 }
