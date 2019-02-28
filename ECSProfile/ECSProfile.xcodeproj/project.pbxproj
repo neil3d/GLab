@@ -31,6 +31,7 @@
 		2899D0F722282B0D003BD8FF /* OOD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OOD.h; sourceTree = "<group>"; };
 		2899D0F822282B0D003BD8FF /* DOD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOD.h; sourceTree = "<group>"; };
 		2899D0F922282B0D003BD8FF /* DOD.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DOD.cpp; sourceTree = "<group>"; };
+		28EB815D22282D6C00C06FF4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +48,7 @@
 		2899D0E322282AE6003BD8FF = {
 			isa = PBXGroup;
 			children = (
+				28EB815D22282D6C00C06FF4 /* README.md */,
 				28DE9A8322282B7000E3E904 /* src */,
 				2899D0ED22282AE6003BD8FF /* Products */,
 			);
