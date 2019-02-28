@@ -48,5 +48,8 @@ int main() {
          << ", DOD time = " << timeDOD.count() << ", OOD/DOD = " << r << endl;
   }
 
-  cout << "Average = " << sum / TEST_COUNT << endl;
+  cout << "Average = " << sum / TEST_COUNT << endl 
+	  << "Press Enter...";
+
+  getchar();
 }
