@@ -22,6 +22,12 @@
     <ClInclude Include="src\Time.h">
       <Filter>Src</Filter>
     </ClInclude>
+    <ClInclude Include="src\WindowSurface.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MyLog.h">
+      <Filter>Src</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\MyPathTracer.cpp">
@@ -32,6 +38,12 @@
     </ClCompile>
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="WinMain.cpp" />
+    <ClCompile Include="src\WindowSurface.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MyLog.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="WeekendPathTracer.rc">

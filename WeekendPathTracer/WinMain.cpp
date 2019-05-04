@@ -3,6 +3,7 @@
 
 #include "stdafx.h"
 #include "Src/MyPathTracer.h"
+#include "Src/MyLog.h"
 
 Neil3D::MyPathTracer g_myApp;
 
@@ -17,6 +18,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 	if (!g_myApp.create(hInstance, _T("My Path Tracer")))
 		return FALSE;
 
+	MY_LOG(Neil3D::Info, _T("My App created, run main loop..."));
 	g_myApp.mainLoop();
 
 	return 0L;

@@ -3,11 +3,11 @@
 
 namespace Neil3D {
 
-	Win32App::Win32App() {}
+	MyWin32App::MyWin32App() {}
 
-	Win32App::~Win32App() {}
+	MyWin32App::~MyWin32App() {}
 
-	bool Win32App::create(HINSTANCE hInstance, const std::wstring& strTitle) {
+	bool MyWin32App::create(HINSTANCE hInstance, const std::wstring& strTitle) {
 		const TCHAR* szWindowClass = _T("Neil3DWin32App");
 
 		// Step 1: Registers the window class.
@@ -15,7 +15,7 @@ namespace Neil3D {
 
 		wcex.cbSize = sizeof(WNDCLASSEX);
 		wcex.style = CS_HREDRAW | CS_VREDRAW;
-		wcex.lpfnWndProc = Win32App::windowProc;
+		wcex.lpfnWndProc = MyWin32App::windowProc;
 		wcex.cbClsExtra = 0;
 		wcex.cbWndExtra = 0;
 		wcex.hInstance = hInstance;
@@ -45,7 +45,7 @@ namespace Neil3D {
 		return true;
 	}
 
-	void Win32App::mainLoop() {
+	void MyWin32App::mainLoop() {
 		MSG msg;
 
 		// Main message loop:
@@ -68,9 +68,21 @@ namespace Neil3D {
 		}
 	}
 
-	void Win32App::destroy() {}
+	void MyWin32App::destroy() {}
 
-	LRESULT CALLBACK Win32App::windowProc(HWND hWnd, UINT message, WPARAM wParam,
+	SIZE MyWin32App::getClientSize() const
+	{
+		SIZE ret = { 0,0 };
+		if (mWnd) {
+			RECT rc;
+			::GetClientRect(mWnd, &rc);
+			ret.cx = rc.right - rc.left;
+			ret.cy = rc.bottom - rc.top;
+		}
+		return ret;
+	}
+
+	LRESULT CALLBACK MyWin32App::windowProc(HWND hWnd, UINT message, WPARAM wParam,
 		LPARAM lParam) {
 		switch (message) {
 		case WM_PAINT:

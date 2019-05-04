@@ -15,18 +15,18 @@ namespace Neil3D {
 	/*
 	 * Win32 API Desktop App class
 	 */
-	class Win32App {
+	class MyWin32App {
 	public:
-		Win32App();
-		virtual ~Win32App();
+		MyWin32App();
+		virtual ~MyWin32App();
 
 		virtual bool create(HINSTANCE hInstance, const std::wstring& strTitle);
 		virtual void mainLoop();
-
 		virtual void update(float deltaTime) = 0;
 		virtual void render() = 0;
-
 		virtual void destroy();
+
+		SIZE getClientSize() const;
 
 	protected:
 		Time mTime;
@@ -40,8 +40,8 @@ namespace Neil3D {
 			LPARAM lParam);
 
 	private:
-		Win32App(const Win32App&) = delete;             // disable copy ctor
-		Win32App& operator=(const Win32App&) = delete;  // disable assignment operator
+		MyWin32App(const MyWin32App&) = delete;             // disable copy ctor
+		MyWin32App& operator=(const MyWin32App&) = delete;  // disable assignment operator
 	};
 
 }  // end of namespace Neil3D
