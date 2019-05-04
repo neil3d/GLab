@@ -7,17 +7,19 @@
  */
 
 #pragma once
+#include "../math/MathDefine.h"
 
 namespace Neil3D {
 
-	class Scene;
 	class SceneNode;
+	struct Material;
 
-	class SceneVisitor {
-	public:
-		virtual ~SceneVisitor() {}
-
-		virtual void acceptSceneNode(Scene* scene, SceneNode* node) = 0;
+	struct HitRecord {
+		float t = 0;
+		vec3 p;
+		vec3 normal;
+		Material* mtl = nullptr;
+		SceneNode* node = nullptr;
 	};
 
 }  // end of namespace Neil3D

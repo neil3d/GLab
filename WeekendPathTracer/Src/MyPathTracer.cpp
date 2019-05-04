@@ -46,13 +46,12 @@ namespace Neil3D {
 				float u = float(x) / (float)(clientSize.cx);
 				float v = float(y) / (float)(clientSize.cy);
 
-				Ray r(origin, lowerLeftCorner + u * horizontal + v * vertical);
-
-				SceneRayHitTest hitTest;
-				hitTest.mRay = r;
+				SceneRayHitTest hitTest(
+					Ray(origin, lowerLeftCorner + u * horizontal + v * vertical)
+				);
 				mSampleScene->visit(&hitTest);
-				if (hitTest.mHitAnything) {
-					const vec3& N = hitTest.mHitRecord.normal;
+				if (hitTest.hitAnything()) {
+					const vec3& N = hitTest.getHitRecord().normal;
 					pixel.R = 128 * (N.x + 1);
 					pixel.G = 128 * (N.y + 1);
 					pixel.B = 128 * (N.z + 1);

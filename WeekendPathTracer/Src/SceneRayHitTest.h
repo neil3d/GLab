@@ -14,10 +14,10 @@ namespace Neil3D {
 
 	class SceneRayHitTest : public SceneVisitor {
 	public:
-		SceneRayHitTest() {}
+		SceneRayHitTest(const Ray& ray) :mRay(ray) {}
 		virtual ~SceneRayHitTest() {}
 
-		virtual void acceptSceneNode(SceneNode* node) override {
+		virtual void acceptSceneNode(Scene* scene, SceneNode* node) override {
 
 			HitRecord rec;
 			bool hit = node->hit(mRay, 0, mClosest, rec);
@@ -28,7 +28,10 @@ namespace Neil3D {
 			}
 		}
 
-	public:
+		bool hitAnything() const { return mHitAnything; }
+		const HitRecord& getHitRecord() const { return mHitRecord; }
+
+	private:
 		float mClosest = std::numeric_limits<float>::max();
 
 		Ray mRay;

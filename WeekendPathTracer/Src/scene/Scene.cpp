@@ -10,7 +10,7 @@ namespace Neil3D {
 
 	void Scene::visit(SceneVisitor * visitor) {
 		for (auto& node : mRootNodes) {
-			visitor->acceptSceneNode(node.get());
+			visitor->acceptSceneNode(this, node.get());
 		}
 	}
 

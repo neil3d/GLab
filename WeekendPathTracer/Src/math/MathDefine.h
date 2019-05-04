@@ -11,6 +11,8 @@
 #include "../../../thirdparty/glm/glm/glm.hpp"
 #define GLM_ENABLE_EXPERIMENTAL
 #include "../../../thirdparty/glm/glm/gtx/compatibility.hpp"
+#include "../../../thirdparty/glm/glm/gtc/random.hpp"
+
 
 
 namespace Neil3D {

@@ -148,6 +148,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="src\material\Lambert.h" />
+    <ClInclude Include="src\material\Material.h" />
+    <ClInclude Include="src\material\Metal.h" />
     <ClInclude Include="Src\math\MathDefine.h" />
     <ClInclude Include="src\math\Ray.h" />
     <ClInclude Include="src\MyLog.h" />
@@ -155,6 +158,7 @@
     <ClInclude Include="Src\MyWin32App.h" />
     <ClInclude Include="src\SampleSceneA.h" />
     <ClInclude Include="src\SceneRayHitTest.h" />
+    <ClInclude Include="src\scene\HitRecord.h" />
     <ClInclude Include="src\scene\Plane.h" />
     <ClInclude Include="src\scene\Scene.h" />
     <ClInclude Include="src\scene\SceneNode.h" />

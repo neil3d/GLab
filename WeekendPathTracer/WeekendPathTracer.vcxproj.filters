@@ -14,6 +14,9 @@
     <Filter Include="Src\scene">
       <UniqueIdentifier>{d92b75e9-8889-47de-b4ab-581f79faa44b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\material">
+      <UniqueIdentifier>{fbe025b1-ef50-4cb6-b639-7973f0829992}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\MyPathTracer.h">
@@ -60,6 +63,18 @@
     </ClInclude>
     <ClInclude Include="src\scene\Plane.h">
       <Filter>Src\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\material\Material.h">
+      <Filter>Src\material</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scene\HitRecord.h">
+      <Filter>Src\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\material\Lambert.h">
+      <Filter>Src\material</Filter>
+    </ClInclude>
+    <ClInclude Include="src\material\Metal.h">
+      <Filter>Src\material</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

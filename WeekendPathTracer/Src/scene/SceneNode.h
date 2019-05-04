@@ -9,35 +9,35 @@
 #pragma once
 #include <string>
 #include <memory>
+#include "HitRecord.h"
 #include "../math/Ray.h"
+#include "../material/Material.h"
 
 namespace Neil3D {
-
-	class SceneNode;
-
-	struct HitRecord {
-		float t;
-		vec3 p;
-		vec3 normal;
-		SceneNode* node = nullptr;
-	};
 
 	class SceneNode {
 	public:
 		typedef std::shared_ptr<SceneNode> Ptr;
 
-		SceneNode(const std::wstring& name) :mName(name) {
+		SceneNode(const std::wstring& name) :mName(name) {}
 
-		}
-
-		virtual ~SceneNode() {
-
-		}
+		virtual ~SceneNode() {}
 
 		virtual bool hit(const Ray& ray, float tMin, float tMax, HitRecord& outRec) = 0;
 
+		template<typename T>
+		std::shared_ptr<T> createMaterial() {
+			mMtl.reset(new T());
+			return mMtl;
+		}
+
+		Material* getMaterial() const {
+			return mMtl.get();
+		}
+
 	protected:
 		std::wstring mName;
+		Material::Ptr mMtl;
 	};
 
 }  // end of namespace Neil3D
