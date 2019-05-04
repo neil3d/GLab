@@ -11,8 +11,7 @@ namespace Neil3D {
 		_T("Error: ")
 	};
 
-	void MyLogFunc(LogPriority log, const TCHAR * fmt, ...)
-	{
+	void MyLogFunc(LogPriority log, const TCHAR * fmt, ...) {
 		va_list argptr;
 
 		va_start(argptr, fmt);

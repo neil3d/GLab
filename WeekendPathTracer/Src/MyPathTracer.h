@@ -15,8 +15,7 @@ namespace Neil3D {
 	/*
 	 * My Path Tracer App class
 	*/
-	class MyPathTracer : public MyWin32App
-	{
+	class MyPathTracer : public MyWin32App {
 	public:
 		MyPathTracer();
 		virtual ~MyPathTracer();

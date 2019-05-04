@@ -153,6 +153,7 @@
     <ClInclude Include="Src\MyWin32App.h" />
     <ClInclude Include="src\Time.h" />
     <ClInclude Include="src\WindowSurface.h" />
+    <ClInclude Include="src\world\World.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
@@ -161,6 +162,7 @@
     <ClCompile Include="Src\MyPathTracer.cpp" />
     <ClCompile Include="Src\MyWin32App.cpp" />
     <ClCompile Include="src\WindowSurface.cpp" />
+    <ClCompile Include="src\world\World.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

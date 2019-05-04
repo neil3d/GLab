@@ -14,18 +14,17 @@
 using Microsoft::WRL::ComPtr;
 
 namespace Neil3D {
-	struct Color32
-	{
-		BYTE R;
-		BYTE G;
+
+	struct Color32 {
 		BYTE B;
+		BYTE G;
+		BYTE R;
 		BYTE A;
 	};
 
-	class WindowSurface
-	{
+	class WindowSurface {
 	public:
-		
+
 	public:
 		WindowSurface();
 		virtual ~WindowSurface();
@@ -33,6 +32,7 @@ namespace Neil3D {
 		bool create(HWND hWnd);
 		void destroy();
 
+		void clear(const Color32& px);
 		void writePixel(unsigned int x, unsigned int y, const Color32& px);
 		void present(bool vSync);
 

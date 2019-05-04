@@ -68,8 +68,7 @@ namespace Neil3D {
 
 	void MyWin32App::destroy() {}
 
-	SIZE MyWin32App::getClientSize() const
-	{
+	SIZE MyWin32App::getClientSize() const {
 		SIZE ret = { 0,0 };
 		if (mWnd) {
 			RECT rc;

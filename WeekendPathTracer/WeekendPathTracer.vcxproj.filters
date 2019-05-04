@@ -8,6 +8,9 @@
     <Filter Include="Src">
       <UniqueIdentifier>{4b1b38cf-9f7e-4600-82e2-4b157739ef6c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\World">
+      <UniqueIdentifier>{f95fb162-2ec3-4fe5-a8a5-e95a6ac8d4fa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\MyPathTracer.h">
@@ -28,6 +31,9 @@
     <ClInclude Include="src\MyLog.h">
       <Filter>Src</Filter>
     </ClInclude>
+    <ClInclude Include="src\world\World.h">
+      <Filter>Src\World</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\MyPathTracer.cpp">
@@ -43,6 +49,9 @@
     </ClCompile>
     <ClCompile Include="src\MyLog.cpp">
       <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\world\World.cpp">
+      <Filter>Src\World</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

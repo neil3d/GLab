@@ -10,8 +10,7 @@
 
 namespace Neil3D {
 
-	enum LogPriority
-	{
+	enum LogPriority {
 		Info,
 		Debug,
 		Warn,

@@ -3,17 +3,12 @@
 
 namespace Neil3D {
 
-	MyPathTracer::MyPathTracer()
-	{
-	}
+	MyPathTracer::MyPathTracer() {}
 
 
-	MyPathTracer::~MyPathTracer()
-	{
-	}
+	MyPathTracer::~MyPathTracer() {}
 
-	bool MyPathTracer::create(HINSTANCE hInstance, const std::wstring & strTitle)
-	{
+	bool MyPathTracer::create(HINSTANCE hInstance, const std::wstring & strTitle) {
 		bool succeed = MyWin32App::create(hInstance, strTitle);
 		if (succeed)
 			succeed = mSurface.create(mWnd);
@@ -21,12 +16,10 @@ namespace Neil3D {
 		return succeed;
 	}
 
-	void MyPathTracer::update(float deltaTime)
-	{
-	}
+	void MyPathTracer::update(float deltaTime) {}
 
-	void MyPathTracer::render()
-	{
+	void MyPathTracer::render() {
+		mSurface.clear({ 255,0,0,255 });
 		mSurface.present(true);
 	}
 

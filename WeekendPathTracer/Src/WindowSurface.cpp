@@ -7,17 +7,11 @@
 
 namespace Neil3D {
 
-	WindowSurface::WindowSurface()
-	{
-	}
+	WindowSurface::WindowSurface() {}
 
+	WindowSurface::~WindowSurface() {}
 
-	WindowSurface::~WindowSurface()
-	{
-	}
-
-	bool WindowSurface::create(HWND hWnd)
-	{
+	bool WindowSurface::create(HWND hWnd) {
 		HRESULT hr;
 		ComPtr<IDXGIFactory> pFactory;
 
@@ -31,8 +25,7 @@ namespace Neil3D {
 		// enum adapters
 		UINT adapterIndex = 0;
 		ComPtr<IDXGIAdapter> pAdapter;
-		while (pFactory->EnumAdapters(adapterIndex, pAdapter.GetAddressOf()) != DXGI_ERROR_NOT_FOUND)
-		{
+		while (pFactory->EnumAdapters(adapterIndex, pAdapter.GetAddressOf()) != DXGI_ERROR_NOT_FOUND) {
 			adapterIndex++;
 			DXGI_ADAPTER_DESC desc;
 			pAdapter->GetDesc(&desc);
@@ -106,7 +99,7 @@ namespace Neil3D {
 
 		ComPtr<ID3D11Texture2D> pTempBufferTexture;
 		hr = pDevice->CreateTexture2D(&backBufferDesc, NULL, &pTempBufferTexture);
-		
+
 		if (FAILED(hr)) {
 			MY_LOG(Error, _T("WindowSurface: Create Temp Buffer FAILED!"));
 			return false;
@@ -131,7 +124,7 @@ namespace Neil3D {
 
 		mWidth = width;
 		mHeight = height;
-		mPitch = mapRc.Pitch / 4;	// DXGI_FORMAT_R8G8B8A8_UNORM
+		mPitch = mapRc.Pitch / 4;	// DXGI_FORMAT_B8G8R8A8_UNORM
 		if (mPitch * 4 != mapRc.Pitch) {
 			MY_LOG(Error, _T("WindowSurface: Pixel Size ERROR!"));
 			return false;
@@ -154,14 +147,17 @@ namespace Neil3D {
 		return true;
 	}
 
-	void WindowSurface::destroy()
-	{
+	void WindowSurface::destroy() {
 		mDrawSurface.Reset();
 		mSwapChain.Reset();
 	}
 
-	void WindowSurface::writePixel(unsigned int x, unsigned int y, const Color32 & px)
-	{
+	void WindowSurface::clear(const Color32 & px) {
+		for (Color32& pixel : mDrawBuffer)
+			pixel = px;
+	}
+
+	void WindowSurface::writePixel(unsigned int x, unsigned int y, const Color32 & px) {
 		unsigned int index = y * mPitch + x;
 		if (index < mDrawBuffer.size()) {
 			mDrawBuffer[index] = px;
@@ -171,8 +167,7 @@ namespace Neil3D {
 		}
 	}
 
-	void WindowSurface::present(bool vSync)
-	{
+	void WindowSurface::present(bool vSync) {
 		HRESULT hr;
 
 		// copy memory pixel to draw surface(texture)
