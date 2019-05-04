@@ -168,6 +168,9 @@ namespace Neil3D {
 	}
 
 	void WindowSurface::present(bool vSync) {
+		if (!mDrawSurface)
+			return;
+
 		HRESULT hr;
 
 		// copy memory pixel to draw surface(texture)

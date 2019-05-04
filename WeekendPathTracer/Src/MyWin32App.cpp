@@ -3,9 +3,17 @@
 
 namespace Neil3D {
 
-	MyWin32App::MyWin32App() {}
+	MyWin32App* g_instance = nullptr;
+
+	MyWin32App::MyWin32App() {
+		g_instance = this;
+	}
 
 	MyWin32App::~MyWin32App() {}
+
+	MyWin32App * MyWin32App::instance() {
+		return g_instance;
+	}
 
 	bool MyWin32App::create(HINSTANCE hInstance, const std::wstring& strTitle) {
 		const TCHAR* szWindowClass = _T("Neil3DWin32App");
@@ -37,9 +45,6 @@ namespace Neil3D {
 
 		if (!hWnd) return false;
 
-		ShowWindow(hWnd, SW_SHOWNORMAL);
-		UpdateWindow(hWnd);
-
 		//--
 		mWin32Instance = hInstance;
 		mWnd = hWnd;
@@ -55,14 +60,21 @@ namespace Neil3D {
 				DispatchMessage(&msg);
 			}
 			else {
-				mTime.tick();
-				update(mTime.getDeltaTime());
-				render();
+				if (mRealtime) {
+					mTime.tick();
+					update(mTime.getDeltaTime());
+					render();
+				}
 			}
 		}
 	}
 
 	void MyWin32App::destroy() {}
+
+	void MyWin32App::showWindow() {
+		ShowWindow(mWnd, SW_SHOWNORMAL);
+		UpdateWindow(mWnd);
+	}
 
 	SIZE MyWin32App::getClientSize() const {
 		SIZE ret = { 0,0 };
@@ -84,6 +96,11 @@ namespace Neil3D {
 		switch (message) {
 		case WM_PAINT:
 			hdc = BeginPaint(hWnd, &ps);
+			if (g_instance) {
+				g_instance->mTime.tick();
+				g_instance->update(g_instance->mTime.getDeltaTime());
+				g_instance->render();
+			}
 			EndPaint(hWnd, &ps);
 			break;
 

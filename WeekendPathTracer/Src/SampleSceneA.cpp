@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "SampleSceneA.h"
 #include "scene/Sphere.h"
+#include "scene/Plane.h"
 
 namespace Neil3D {
 
@@ -10,6 +11,8 @@ namespace Neil3D {
 	SampleSceneA::~SampleSceneA() {}
 
 	void SampleSceneA::initSceneContent() {
+
+		Plane::Ptr ground = createNode<Plane>(_T("GroundPlane"));
 
 		{
 			Sphere::Ptr sphere = createNode<Sphere>(_T("Sphere_01"));

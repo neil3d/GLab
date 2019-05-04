@@ -11,12 +11,6 @@
 
 namespace Neil3D {
 
-	struct HitRecord {
-		float t;
-		vec3 p;
-		vec3 normal;
-	};
-
 	/*
 	 * p(t) = origin + t*direction
 	*/

@@ -20,6 +20,7 @@ namespace Neil3D {
 		sampleScene->initSceneContent();
 		mSampleScene = sampleScene;
 
+		showWindow();
 		return succeed;
 	}
 
@@ -28,7 +29,7 @@ namespace Neil3D {
 	void MyPathTracer::render() {
 
 		// clear background
-		Color32 clearColor = { (BYTE)(255 * 0.5f),(BYTE)(255 * 0.7f),255,255 };
+		Color32 clearColor = { 5, 5, 5, 255 };
 		mSurface.clear(clearColor);
 
 		// ray cast

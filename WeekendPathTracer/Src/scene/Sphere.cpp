@@ -21,10 +21,21 @@ namespace Neil3D {
 		float disc = b * b - a * c;
 		if (disc > 0) {
 			float temp = (-b - sqrt(b*b - a * c)) / a;
-			if (temp < tMax && temp > tMin) {
+
+			if (temp<tMax && temp>tMin) {
 				outRec.t = temp;
 				outRec.p = ray.getPoint(temp);
 				outRec.normal = (outRec.p - center) / radius;
+				outRec.node = this;
+				return true;
+			}
+
+			temp = (-b + sqrt(b*b - a * c)) / a;
+			if (temp<tMax && temp>tMin) {
+				outRec.t = temp;
+				outRec.p = ray.getPoint(temp);
+				outRec.normal = (outRec.p - center) / radius;
+				outRec.node = this;
 				return true;
 			}
 		}

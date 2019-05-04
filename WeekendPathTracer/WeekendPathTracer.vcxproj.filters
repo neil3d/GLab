@@ -58,6 +58,9 @@
     <ClInclude Include="src\SceneRayHitTest.h">
       <Filter>Src</Filter>
     </ClInclude>
+    <ClInclude Include="src\scene\Plane.h">
+      <Filter>Src\scene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\MyPathTracer.cpp">
@@ -85,6 +88,9 @@
     </ClCompile>
     <ClCompile Include="src\SampleSceneA.cpp">
       <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scene\Plane.cpp">
+      <Filter>Src\scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

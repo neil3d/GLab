@@ -13,6 +13,15 @@
 
 namespace Neil3D {
 
+	class SceneNode;
+
+	struct HitRecord {
+		float t;
+		vec3 p;
+		vec3 normal;
+		SceneNode* node = nullptr;
+	};
+
 	class SceneNode {
 	public:
 		typedef std::shared_ptr<SceneNode> Ptr;

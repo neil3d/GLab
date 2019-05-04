@@ -20,15 +20,19 @@ namespace Neil3D {
 		MyWin32App();
 		virtual ~MyWin32App();
 
+		static MyWin32App* instance();
+
 		virtual bool create(HINSTANCE hInstance, const std::wstring& strTitle);
 		virtual void mainLoop();
 		virtual void update(float deltaTime) = 0;
 		virtual void render() = 0;
 		virtual void destroy();
 
+		void showWindow();
 		SIZE getClientSize() const;
 
 	protected:
+		bool mRealtime = false;
 		Time mTime;
 
 		HINSTANCE mWin32Instance = nullptr;
