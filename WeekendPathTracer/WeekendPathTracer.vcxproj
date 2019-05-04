@@ -148,18 +148,21 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="Src\MyPathTracer.h" />
+    <ClInclude Include="Src\MyWin32App.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="WeekendPathTracer.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Src\MyPathTracer.cpp" />
+    <ClCompile Include="Src\MyWin32App.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="WeekendPathTracer.cpp" />
+    <ClCompile Include="WinMain.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="WeekendPathTracer.rc" />
