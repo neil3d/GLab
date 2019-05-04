@@ -27,6 +27,7 @@ namespace Neil3D {
 
 	void MyPathTracer::render()
 	{
+		mSurface.present(true);
 	}
 
 }// end of namespace Neil3D

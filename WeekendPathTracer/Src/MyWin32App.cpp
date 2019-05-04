@@ -30,7 +30,7 @@ namespace Neil3D {
 
 		// Step 2: creates main window
 		HWND hWnd = CreateWindowW(
-			szWindowClass, strTitle.c_str(), WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, 0,
+			szWindowClass, strTitle.c_str(), WS_OVERLAPPED | WS_SYSMENU, CW_USEDEFAULT, 0,
 			CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
 
 		if (!hWnd) return false;
@@ -59,12 +59,10 @@ namespace Neil3D {
 				::TranslateMessage(&msg);
 				::DispatchMessage(&msg);
 			}
-			else {
-				mTime.tick();
 
-				update(mTime.getDeltaTime());
-				render();
-			}
+			mTime.tick();
+			update(mTime.getDeltaTime());
+			render();
 		}
 	}
 
