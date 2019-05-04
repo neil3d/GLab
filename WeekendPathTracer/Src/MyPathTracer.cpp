@@ -51,8 +51,14 @@ namespace Neil3D {
 				SceneRayHitTest hitTest;
 				hitTest.mRay = r;
 				mSampleScene->visit(&hitTest);
-				if (hitTest.mHit)
+				if (hitTest.mHit) {
+					const vec3& N = hitTest.mHitRecord.normal;
+					pixel.R = 128 * (N.x + 1);
+					pixel.G = 128 * (N.y + 1);
+					pixel.B = 128 * (N.z + 1);
+
 					mSurface.writePixel(x, y, pixel);
+				}
 			}
 		}// end of for
 
