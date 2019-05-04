@@ -19,6 +19,9 @@
     <ClInclude Include="targetver.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="src\Time.h">
+      <Filter>Src</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\MyPathTracer.cpp">

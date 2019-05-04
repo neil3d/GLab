@@ -1,20 +1,21 @@
 /**
-*	A Happy Weekend Path Tracer
-*
-*	Author: Neil
-*	Date:	May, 2019
-*	See:	https://neil3d.github.io
-*/
+ *	A Happy Weekend Path Tracer
+ *
+ *	Author: Neil
+ *	Date:	May, 2019
+ *	See:	https://neil3d.github.io
+ */
 
 #pragma once
 #include <string>
+#include "Time.h"
 
 namespace Neil3D {
+
 	/*
 	 * Win32 API Desktop App class
-	*/
-	class Win32App
-	{
+	 */
+	class Win32App {
 	public:
 		Win32App();
 		virtual ~Win32App();
@@ -28,16 +29,19 @@ namespace Neil3D {
 		virtual void destroy();
 
 	protected:
-		HINSTANCE	mWin32Instance = nullptr;
-		HWND		mWnd = nullptr;
-		bool		mRunning = true;
+		Time mTime;
+
+		HINSTANCE mWin32Instance = nullptr;
+		HWND mWnd = nullptr;
+		bool mRunning = true;
 
 	private:
-		static LRESULT CALLBACK windowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
+		static LRESULT CALLBACK windowProc(HWND hWnd, UINT message, WPARAM wParam,
+			LPARAM lParam);
 
 	private:
-		Win32App(const Win32App&) = delete;	// disable copy ctor
-		Win32App& operator = (const Win32App&) = delete;	// disable assignment operator
+		Win32App(const Win32App&) = delete;             // disable copy ctor
+		Win32App& operator=(const Win32App&) = delete;  // disable assignment operator
 	};
 
-}// end of namespace Neil3D
+}  // end of namespace Neil3D

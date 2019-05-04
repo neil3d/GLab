@@ -3,17 +3,11 @@
 
 namespace Neil3D {
 
-	Win32App::Win32App()
-	{
-	}
+	Win32App::Win32App() {}
 
+	Win32App::~Win32App() {}
 
-	Win32App::~Win32App()
-	{
-	}
-
-	bool Win32App::create(HINSTANCE hInstance, const std::wstring& strTitle)
-	{
+	bool Win32App::create(HINSTANCE hInstance, const std::wstring& strTitle) {
 		const TCHAR* szWindowClass = _T("Neil3DWin32App");
 
 		// Step 1: Registers the window class.
@@ -35,11 +29,11 @@ namespace Neil3D {
 		ATOM win32Class = RegisterClassExW(&wcex);
 
 		// Step 2: creates main window
-		HWND hWnd = CreateWindowW(szWindowClass, strTitle.c_str(), WS_OVERLAPPEDWINDOW,
-			CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
+		HWND hWnd = CreateWindowW(
+			szWindowClass, strTitle.c_str(), WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, 0,
+			CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
 
-		if (!hWnd)
-			return false;
+		if (!hWnd) return false;
 
 		ShowWindow(hWnd, SW_SHOWNORMAL);
 		UpdateWindow(hWnd);
@@ -51,8 +45,7 @@ namespace Neil3D {
 		return true;
 	}
 
-	void Win32App::mainLoop()
-	{
+	void Win32App::mainLoop() {
 		MSG msg;
 
 		// Main message loop:
@@ -67,19 +60,19 @@ namespace Neil3D {
 				::DispatchMessage(&msg);
 			}
 			else {
-				update(0.1f);
+				mTime.tick();
+
+				update(mTime.getDeltaTime());
 				render();
 			}
 		}
 	}
 
-	void Win32App::destroy()
-	{
-	}
+	void Win32App::destroy() {}
 
-	LRESULT CALLBACK Win32App::windowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam) {
-		switch (message)
-		{
+	LRESULT CALLBACK Win32App::windowProc(HWND hWnd, UINT message, WPARAM wParam,
+		LPARAM lParam) {
+		switch (message) {
 		case WM_PAINT:
 		case WM_ERASEBKGND:
 			break;
@@ -92,4 +85,4 @@ namespace Neil3D {
 		return 0;
 	}
 
-}// end of namespace Neil3D
+}  // end of namespace Neil3D
