@@ -9,6 +9,7 @@
 #pragma once
 #include "MyWin32App.h"
 #include "WindowSurface.h"
+#include "scene/Scene.h"
 
 namespace Neil3D {
 
@@ -26,6 +27,7 @@ namespace Neil3D {
 
 	private:
 		WindowSurface mSurface;
+		Scene::Ptr mSampleScene;
 	};
 
 }// end of namespace Neil3D

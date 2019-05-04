@@ -153,6 +153,12 @@
     <ClInclude Include="src\MyLog.h" />
     <ClInclude Include="Src\MyPathTracer.h" />
     <ClInclude Include="Src\MyWin32App.h" />
+    <ClInclude Include="src\SampleSceneA.h" />
+    <ClInclude Include="src\SceneRayHitTest.h" />
+    <ClInclude Include="src\scene\Scene.h" />
+    <ClInclude Include="src\scene\SceneNode.h" />
+    <ClInclude Include="src\scene\SceneVisitor.h" />
+    <ClInclude Include="src\scene\Sphere.h" />
     <ClInclude Include="src\Time.h" />
     <ClInclude Include="src\WindowSurface.h" />
     <ClInclude Include="stdafx.h" />
@@ -163,6 +169,9 @@
     <ClCompile Include="src\MyLog.cpp" />
     <ClCompile Include="Src\MyPathTracer.cpp" />
     <ClCompile Include="Src\MyWin32App.cpp" />
+    <ClCompile Include="src\SampleSceneA.cpp" />
+    <ClCompile Include="src\scene\Scene.cpp" />
+    <ClCompile Include="src\scene\Sphere.cpp" />
     <ClCompile Include="src\WindowSurface.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

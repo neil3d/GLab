@@ -11,6 +11,9 @@
     <Filter Include="Src\math">
       <UniqueIdentifier>{cebaae14-215c-4293-a827-51f063070216}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\scene">
+      <UniqueIdentifier>{d92b75e9-8889-47de-b4ab-581f79faa44b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\MyPathTracer.h">
@@ -37,6 +40,24 @@
     <ClInclude Include="Src\math\MathDefine.h">
       <Filter>Src\math</Filter>
     </ClInclude>
+    <ClInclude Include="src\scene\Scene.h">
+      <Filter>Src\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scene\SceneNode.h">
+      <Filter>Src\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scene\Sphere.h">
+      <Filter>Src\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SampleSceneA.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scene\SceneVisitor.h">
+      <Filter>Src\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SceneRayHitTest.h">
+      <Filter>Src</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\MyPathTracer.cpp">
@@ -55,6 +76,15 @@
     </ClCompile>
     <ClCompile Include="src\math\Ray.cpp">
       <Filter>Src\math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scene\Scene.cpp">
+      <Filter>Src\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scene\Sphere.cpp">
+      <Filter>Src\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SampleSceneA.cpp">
+      <Filter>Src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
