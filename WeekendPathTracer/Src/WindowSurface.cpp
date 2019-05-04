@@ -47,7 +47,7 @@ namespace Neil3D {
 		sd.BufferCount = 1;
 		sd.BufferDesc.Width = width;
 		sd.BufferDesc.Height = height;
-		sd.BufferDesc.Format = DXGI_FORMAT_B8G8R8A8_UNORM;
+		sd.BufferDesc.Format = DXGI_FORMAT_R8G8B8A8_UNORM;
 		sd.BufferDesc.RefreshRate.Numerator = 60;
 		sd.BufferDesc.RefreshRate.Denominator = 1;
 		sd.BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT;
@@ -124,7 +124,7 @@ namespace Neil3D {
 
 		mWidth = width;
 		mHeight = height;
-		mPitch = mapRc.Pitch / 4;	// DXGI_FORMAT_B8G8R8A8_UNORM
+		mPitch = mapRc.Pitch / 4;	// DXGI_FORMAT_R8G8B8A8_UNORM
 		if (mPitch * 4 != mapRc.Pitch) {
 			MY_LOG(Error, _T("WindowSurface: Pixel Size ERROR!"));
 			return false;

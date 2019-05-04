@@ -16,9 +16,9 @@ using Microsoft::WRL::ComPtr;
 namespace Neil3D {
 
 	struct Color32 {
-		BYTE B;
-		BYTE G;
 		BYTE R;
+		BYTE G;
+		BYTE B;
 		BYTE A;
 	};
 

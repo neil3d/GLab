@@ -30,7 +30,9 @@ namespace Neil3D {
 
 		// Step 2: creates main window
 		HWND hWnd = CreateWindowW(
-			szWindowClass, strTitle.c_str(), WS_OVERLAPPED | WS_SYSMENU, CW_USEDEFAULT, 0,
+			szWindowClass, strTitle.c_str(),
+			WS_OVERLAPPED | WS_SYSMENU,
+			CW_USEDEFAULT, 0,
 			CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
 
 		if (!hWnd) return false;
@@ -46,23 +48,17 @@ namespace Neil3D {
 	}
 
 	void MyWin32App::mainLoop() {
-		MSG msg;
-
-		// Main message loop:
-		while (mRunning) {
-			if (::PeekMessage(&msg, NULL, 0, 0, PM_NOREMOVE)) {
-				if (!::GetMessage(&msg, NULL, 0, 0)) {
-					mRunning = false;
-					break;
-				}
-
-				::TranslateMessage(&msg);
-				::DispatchMessage(&msg);
+		MSG msg = { 0 };
+		while (WM_QUIT != msg.message) {
+			if (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE)) {
+				TranslateMessage(&msg);
+				DispatchMessage(&msg);
 			}
-
-			mTime.tick();
-			update(mTime.getDeltaTime());
-			render();
+			else {
+				mTime.tick();
+				update(mTime.getDeltaTime());
+				render();
+			}
 		}
 	}
 
@@ -81,16 +77,26 @@ namespace Neil3D {
 
 	LRESULT CALLBACK MyWin32App::windowProc(HWND hWnd, UINT message, WPARAM wParam,
 		LPARAM lParam) {
+
+		PAINTSTRUCT ps;
+		HDC hdc;
+
 		switch (message) {
 		case WM_PAINT:
-		case WM_ERASEBKGND:
+			hdc = BeginPaint(hWnd, &ps);
+			EndPaint(hWnd, &ps);
 			break;
+
 		case WM_DESTROY:
 			PostQuitMessage(0);
+			break;
+
+		case WM_ERASEBKGND:
 			break;
 		default:
 			return DefWindowProc(hWnd, message, wParam, lParam);
 		}
+
 		return 0;
 	}
 

@@ -33,7 +33,6 @@ namespace Neil3D {
 
 		HINSTANCE mWin32Instance = nullptr;
 		HWND mWnd = nullptr;
-		bool mRunning = true;
 
 	private:
 		static LRESULT CALLBACK windowProc(HWND hWnd, UINT message, WPARAM wParam,

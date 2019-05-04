@@ -8,8 +8,8 @@
     <Filter Include="Src">
       <UniqueIdentifier>{4b1b38cf-9f7e-4600-82e2-4b157739ef6c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Src\World">
-      <UniqueIdentifier>{f95fb162-2ec3-4fe5-a8a5-e95a6ac8d4fa}</UniqueIdentifier>
+    <Filter Include="Src\math">
+      <UniqueIdentifier>{cebaae14-215c-4293-a827-51f063070216}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -31,8 +31,11 @@
     <ClInclude Include="src\MyLog.h">
       <Filter>Src</Filter>
     </ClInclude>
-    <ClInclude Include="src\world\World.h">
-      <Filter>Src\World</Filter>
+    <ClInclude Include="src\math\Ray.h">
+      <Filter>Src\math</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\math\MathDefine.h">
+      <Filter>Src\math</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -50,8 +53,8 @@
     <ClCompile Include="src\MyLog.cpp">
       <Filter>Src</Filter>
     </ClCompile>
-    <ClCompile Include="src\world\World.cpp">
-      <Filter>Src\World</Filter>
+    <ClCompile Include="src\math\Ray.cpp">
+      <Filter>Src\math</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
