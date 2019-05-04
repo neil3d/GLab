@@ -18,14 +18,21 @@ namespace Neil3D {
 		virtual ~SceneRayHitTest() {}
 
 		virtual void acceptSceneNode(SceneNode* node) override {
-			float tMax = std::numeric_limits<float>::max();
 
-			mHit = node->hit(mRay, 0, tMax, mHitRecord);
+			HitRecord rec;
+			bool hit = node->hit(mRay, 0, mClosest, rec);
+			if (hit) {
+				mHitAnything = true;
+				mClosest = rec.t;
+				mHitRecord = rec;
+			}
 		}
 
 	public:
+		float mClosest = std::numeric_limits<float>::max();
+
 		Ray mRay;
-		bool mHit = false;
+		bool mHitAnything = false;
 		HitRecord mHitRecord;
 	};
 

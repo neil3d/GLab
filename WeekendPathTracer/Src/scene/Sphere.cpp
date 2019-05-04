@@ -3,7 +3,7 @@
 
 namespace Neil3D {
 
-	Sphere::Sphere(const std::wstring& name):SceneNode(name) {}
+	Sphere::Sphere(const std::wstring& name) :SceneNode(name) {}
 
 
 	Sphere::~Sphere() {}
@@ -21,13 +21,12 @@ namespace Neil3D {
 		float disc = b * b - a * c;
 		if (disc > 0) {
 			float temp = (-b - sqrt(b*b - a * c)) / a;
-			if (temp > tMax || temp < tMin)
-				temp = (-b + sqrt(b*b - a * c)) / a;
-
-			outRec.t = temp;
-			outRec.p = ray.getPoint(temp);
-			outRec.normal = (outRec.p - center) / radius;
-			return true;
+			if (temp < tMax && temp > tMin) {
+				outRec.t = temp;
+				outRec.p = ray.getPoint(temp);
+				outRec.normal = (outRec.p - center) / radius;
+				return true;
+			}
 		}
 
 		return false;
