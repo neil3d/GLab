@@ -31,6 +31,9 @@ namespace Neil3D {
 		}
 		void visit(SceneVisitor* visitor);
 
+		virtual bool hit(const Ray& ray, float tMin, float tMax, HitRecord& outRec);
+
+
 	protected:
 		std::list<SceneNode::Ptr>	mRootNodes;
 	};

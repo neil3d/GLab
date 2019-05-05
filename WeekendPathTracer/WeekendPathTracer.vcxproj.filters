@@ -58,9 +58,6 @@
     <ClInclude Include="src\scene\SceneVisitor.h">
       <Filter>Src\scene</Filter>
     </ClInclude>
-    <ClInclude Include="src\SceneRayHitTest.h">
-      <Filter>Src</Filter>
-    </ClInclude>
     <ClInclude Include="src\scene\Plane.h">
       <Filter>Src\scene</Filter>
     </ClInclude>
@@ -91,9 +88,6 @@
     </ClCompile>
     <ClCompile Include="src\MyLog.cpp">
       <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\math\Ray.cpp">
-      <Filter>Src\math</Filter>
     </ClCompile>
     <ClCompile Include="src\scene\Scene.cpp">
       <Filter>Src\scene</Filter>

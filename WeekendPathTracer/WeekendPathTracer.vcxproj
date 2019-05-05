@@ -157,7 +157,6 @@
     <ClInclude Include="Src\MyPathTracer.h" />
     <ClInclude Include="Src\MyWin32App.h" />
     <ClInclude Include="src\SampleSceneA.h" />
-    <ClInclude Include="src\SceneRayHitTest.h" />
     <ClInclude Include="src\scene\HitRecord.h" />
     <ClInclude Include="src\scene\Plane.h" />
     <ClInclude Include="src\scene\Scene.h" />
@@ -170,7 +169,6 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\math\Ray.cpp" />
     <ClCompile Include="src\MyLog.cpp" />
     <ClCompile Include="Src\MyPathTracer.cpp" />
     <ClCompile Include="Src\MyWin32App.cpp" />

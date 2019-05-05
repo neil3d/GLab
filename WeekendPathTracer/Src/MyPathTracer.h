@@ -26,6 +26,9 @@ namespace Neil3D {
 		virtual void render() override;
 
 	private:
+		vec3 color(int x, int y, int width, int height);
+
+	private:
 		WindowSurface mSurface;
 		Scene::Ptr mSampleScene;
 	};

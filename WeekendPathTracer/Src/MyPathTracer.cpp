@@ -2,7 +2,7 @@
 #include "MyPathTracer.h"
 #include "math/Ray.h"
 #include "SampleSceneA.h"
-#include "SceneRayHitTest.h"
+#include "MyLog.h"
 
 namespace Neil3D {
 
@@ -28,41 +28,59 @@ namespace Neil3D {
 
 	void MyPathTracer::render() {
 
-		// clear background
-		Color32 clearColor = { 5, 5, 5, 255 };
-		mSurface.clear(clearColor);
+		float startTime = mTime.getTimeSinceStartup();
 
-		// ray cast
-		vec3 lowerLeftCorner(-2, -1, -1);
-		vec3 horizontal(4, 0, 0);
-		vec3 vertical(0, 2, 0);
-		vec3 origin(0);
-
-		Color32 pixel = { 250,5,5,255 };
+		Color32 pixel = { 0,0,0,255 };
 
 		SIZE clientSize = getClientSize();
-		for (int y = clientSize.cy - 1; y >= 0; y--) {
-			for (int x = 0; x < clientSize.cx; x++) {
-				float u = float(x) / (float)(clientSize.cx);
-				float v = float(y) / (float)(clientSize.cy);
+		int width = clientSize.cx;
+		int height = clientSize.cy;
 
-				SceneRayHitTest hitTest(
-					Ray(origin, lowerLeftCorner + u * horizontal + v * vertical)
-				);
-				mSampleScene->visit(&hitTest);
-				if (hitTest.hitAnything()) {
-					const vec3& N = hitTest.getHitRecord().normal;
-					pixel.R = 128 * (N.x + 1);
-					pixel.G = 128 * (N.y + 1);
-					pixel.B = 128 * (N.z + 1);
+		for (int y = height - 1; y >= 0; y--) {
+			for (int x = 0; x < width; x++) {
+				vec3 c = color(x, y, width, height);
+				pixel.R = BYTE(255 * c.x);
+				pixel.G = BYTE(255 * c.y);
+				pixel.B = BYTE(255 * c.z);
 
-					mSurface.writePixel(x, y, pixel);
-				}
+				mSurface.writePixel(x, y, pixel);
 			}
 		}// end of for
 
 		// show
 		mSurface.present(true);
+
+		float frameTime = mTime.getTimeSinceStartup() - startTime;
+		MY_LOG(Info, _T("Render Time = %.4f"), frameTime);
+	}
+
+	vec3 MyPathTracer::color(int x, int y, int width, int height) {
+
+		vec3 lowerLeftCorner(-2, -1, -1);
+		vec3 horizontal(4, 0, 0);
+		vec3 vertical(0, 2, 0);
+		vec3 origin(0);
+
+		int ns = 8;
+		vec3 c(0);
+
+		for (int i = 0; i < ns; i++) {
+			vec2 rand = glm::diskRand(1.0f);
+			float u = float(x + rand.x) / (float)(width);
+			float v = float(y + rand.y) / (float)(height);
+
+			HitRecord rec;
+			Ray ray(origin, lowerLeftCorner + u * horizontal + v * vertical);
+			if (mSampleScene->hit(ray, 0.0001f, std::numeric_limits<float>::max(), rec)) {
+				c += (rec.normal + vec3(1, 1, 1))*0.5f;
+			}
+			else {
+				float t = (ray.direction.y + 1.0f)*0.5f;
+				c += glm::lerp(vec3(1, 1, 1), vec3(0.5f, 0.7f, 1.0f), t);
+			}
+		}// end of for(s)
+
+		return c / (float)ns;
 	}
 
 }// end of namespace Neil3D
