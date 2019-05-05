@@ -21,8 +21,4 @@ namespace Neil3D {
 
 }  // end of namespace Neil3D
 
-#ifdef _DEBUG
 #define  MY_LOG Neil3D::MyLogFunc
-#else
-#define MY_LOG noop
-#endif

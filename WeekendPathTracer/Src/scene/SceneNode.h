@@ -28,7 +28,7 @@ namespace Neil3D {
 		template<typename T>
 		std::shared_ptr<T> createMaterial() {
 			mMtl.reset(new T());
-			return mMtl;
+			return std::dynamic_pointer_cast<T>(mMtl);
 		}
 
 		Material* getMaterial() const {

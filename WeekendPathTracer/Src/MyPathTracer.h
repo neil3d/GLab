@@ -27,6 +27,7 @@ namespace Neil3D {
 
 	private:
 		vec3 color(int x, int y, int width, int height);
+		vec3 generateRay(const Ray& ray, int depth);
 
 	private:
 		WindowSurface mSurface;

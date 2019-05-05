@@ -19,6 +19,7 @@ namespace Neil3D {
 					outRec.p = ray.getPoint(t);
 					outRec.normal = mNormal;
 					outRec.node = this;
+					outRec.mtl = mMtl.get();
 					return true;
 				}
 			}

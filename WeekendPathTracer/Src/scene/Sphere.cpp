@@ -27,6 +27,7 @@ namespace Neil3D {
 				outRec.p = ray.getPoint(temp);
 				outRec.normal = (outRec.p - center) / radius;
 				outRec.node = this;
+				outRec.mtl = mMtl.get();
 				return true;
 			}
 
@@ -36,6 +37,7 @@ namespace Neil3D {
 				outRec.p = ray.getPoint(temp);
 				outRec.normal = (outRec.p - center) / radius;
 				outRec.node = this;
+				outRec.mtl = mMtl.get();
 				return true;
 			}
 		}
