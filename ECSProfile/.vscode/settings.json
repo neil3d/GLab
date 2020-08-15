@@ -1,0 +1,5 @@
+{
+    "cmake.configureSettings": {
+      "CMAKE_TOOLCHAIN_FILE": "/Users/neil3d/github/vcpkg/scripts/buildsystems/vcpkg.cmake"
+    }
+  }

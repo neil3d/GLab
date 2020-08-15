@@ -4,8 +4,9 @@
 #include <memory>
 #include <string>
 
-#include "../../thirdparty/glm/glm/ext.hpp"
-#include "../../thirdparty/glm/glm/glm.hpp"
+#include <glm/glm.hpp>
+#include <glm/ext.hpp>
+#include <glm/gtc/matrix_transform.hpp>
 
 using namespace std;
 using namespace glm;
@@ -32,7 +33,12 @@ class Transform : public Component {
 
   Transform(GameObject* obj) : Component(obj), mScale(1), mLocalToWorld(1) {}
 
-  virtual void tick(float deltaTime) override;
+  virtual void tick(float deltaTime) override {
+    mLocalToWorld = mat4(1);
+    mLocalToWorld = glm::translate(mLocalToWorld, mPosition);
+    mLocalToWorld *= glm::mat4_cast(mRotation);
+    mLocalToWorld = glm::scale(mLocalToWorld, mScale);
+  }
 
  private:
   vec3 mPosition;
@@ -55,7 +61,12 @@ class GameObject {
     return component;
   }
 
-  void tick(float deltaTime);
+  void tick(float deltaTime)
+  {
+      for (auto iter = mComponents.begin(); iter != mComponents.end(); ++iter) {
+    (*iter)->tick(deltaTime);
+  }
+  }
 
  private:
   list<Component::Ptr> mComponents;
