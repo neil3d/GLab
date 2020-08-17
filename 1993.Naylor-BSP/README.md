@@ -27,4 +27,4 @@
 > — John Carmack, Interview for Scarydarkfast
 
 
-- Fabien Sanglard,《Game Engine Black Book》, Chapter 5.12 3D Renderer
+- Fabien Sanglard,[Game Engine Black Book: Doom](https://github.com/fabiensanglard/gebbdoom), Chapter 5.12 3D Renderer
