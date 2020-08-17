@@ -1,5 +1,6 @@
 # Constructing Good Partitioning Trees
 
+![Bruce_Naylor2](./images/Bruce_Naylor2.jpg)
 - Author: Bruce Naylor
 - Publication: Graphics Interface '93
 
