@@ -8,3 +8,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # build config
 SET(CMAKE_BUILD_TYPE "Debug")
+
+# sub projects
+# add_subdirectory(MyFramework)
+add_subdirectory(1977.Blinn-PhongShading/code)
