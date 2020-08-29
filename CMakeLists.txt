@@ -10,5 +10,5 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 SET(CMAKE_BUILD_TYPE "Debug")
 
 # sub projects
-# add_subdirectory(MyFramework)
+add_subdirectory(GKit)
 add_subdirectory(1977.Blinn-PhongShading/code)
