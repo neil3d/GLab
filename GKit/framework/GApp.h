@@ -1,18 +1,26 @@
 #pragma once
-struct GLFWwindow;
+#define GLFW_INCLUDE_VULKAN
+#include <GLFW/glfw3.h>
 
 namespace GKit {
 class GApp {
  public:
   GApp() = default;
-  ~GApp() = default;
+  virtual ~GApp() = default;
 
-  void init();
+  void init(const char* szAppName);
   void createWindow(int width, int height, const char* szTitle);
   void mainLoop();
   void shutdown();
 
- private:
+ protected:
+  VkInstance _createVkInstance(const char* szAppName);
+  VkPhysicalDevice _selectPhysicalDevice(bool dumpInfo);
+
+ protected:
+  VkInstance mVkInstance = VK_NULL_HANDLE;
+  VkPhysicalDevice mVkPhysicalDevice = VK_NULL_HANDLE;
+
   GLFWwindow* mWindow = nullptr;
 
  public:
