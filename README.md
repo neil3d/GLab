@@ -5,6 +5,10 @@
 
 ## 目录列表
 
-| 目录名称  |   内容    |   相关引擎技术    |
-| -- | -- | -- |
-| 1993.Naylor-BSP   | Constructing Good Partitioning Trees  | Doom, Quake etc.  |
+## 1993.Naylor-BSP : Constructing Good Partitioning Trees
+
+- Doom, Quake etc.  |
+
+## 1993.HiZ : Hierarchical Z-buffer visibility
+
+- https://dl.acm.org/doi/10.1145/166117.166147
